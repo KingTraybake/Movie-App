@@ -44,4 +44,4 @@ You can run the app using:
 
 ## Goal
 
-I made this app using a tutorial from JavaScript Mastery on YouTube. I made it so I can leanr how to make an app so I get better at development and programming
+I made this app using a tutorial from JavaScript Mastery on YouTube. I made it so I can learn how to make an app so I get better at development and programming
