@@ -7,6 +7,8 @@ import { Image, ScrollView, View } from "react-native";
   export default function Index() {
     const router = useRouter();
 
+    const { data: movie}
+
     return (
       <View style={{ flex: 1, backgroundColor: '#030014' }}>
         <Image source={images.bg} style={{ position: 'absolute', width: '100%', zIndex: 0 }}/>
