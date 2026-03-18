@@ -29,7 +29,7 @@ interface Props {
                 value=""
                 onChangeText={() => {}}
                 placeholderTextColor="#a8b5db"
-                className="flex-1 ml-2 text-white"
+                style={{ flex: 1, marginLeft: 2, color: 'white' }}
               />
           </View>
       )
