@@ -19,10 +19,10 @@ const MovieCard = ({ id, poster_path, title, vote_average, release_date }: Movie
                 <Image
                     source={{ 
                         uri : poster_path 
-                            ? `https://image.tmdb.org/t/p/w500$poster_path`
+                            ? `https://image.tmdb.org/t/p/w500${poster_path}`
                             : 'https://placeholder.co/600x400/1a1a1a/ffffff.png'
                     }}
-                    style={{ width: '100%', height: 52, borderRadius: 8 }}
+                    style={{ width: '100%', height: 208, borderRadius: 8 }}
                     resizeMode="cover"
                 />
 
