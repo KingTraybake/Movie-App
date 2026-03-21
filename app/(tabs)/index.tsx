@@ -20,7 +20,7 @@ import { ActivityIndicator, FlatList, Image, ScrollView, Text, View } from "reac
 
     return (
       <View style={{ flex: 1, backgroundColor: '#030014' }}>
-        <Image source={images.bg} style={{ position: 'absolute', width: '100%', height: '100%', zIndex: 0 }} />
+        <Image source={images.bg} style={{flex: 1, position: 'absolute', width: '100%', zIndex: 0, top: 0, left:0 }} />
 
         <ScrollView style={{ flex: 1, paddingHorizontal: 20 }} showsVerticalScrollIndicator={false} contentContainerStyle={{ minHeight: "100%", paddingBottom: 20}}>
           <Image source={icons.logo} style={{ width: 48, height: 40, marginTop: 80, marginBottom: 20, alignSelf: 'center' }} />
