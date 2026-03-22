@@ -3,6 +3,7 @@ import SearchBar from "@/components/SearchBar";
 import { icons } from "@/constants/icons";
 import { images } from "@/constants/images";
 import { fetchMovies } from "@/services/api";
+import { updateSearchCount } from "@/services/appwrite";
 import useFetch from "@/services/usefetch";
 import React, { useEffect, useState } from 'react';
 import { ActivityIndicator, FlatList, Image, Text, View } from 'react-native';
@@ -21,9 +22,14 @@ const Search = () => {
     }), false)
 
     useEffect(() => {
+        
+
         const timeoutId = setTimeout(async () => {
             if(searchQuery.trim()) {
                 await loadMovies();
+            if(movies?.length > 0 && movies?.[0])
+                await updateSearchCount(searchQuery, movies[0]);
+
             } else {
                 reset()
             }
@@ -37,7 +43,7 @@ const Search = () => {
             <Image source={images.bg} style={{flex: 1, position: 'absolute', width: '100%',  zIndex: 0, top: 0, left: 0}} resizeMode="cover"/>
         
             <FlatList 
-                data={movies} 
+                data={movies as Movie[]} 
                 renderItem={({ item }) => <MovieCard {...item} />}
                 keyExtractor={(item) => item.id.toString()}
                 style={{paddingHorizontal: 20}}
@@ -75,7 +81,7 @@ const Search = () => {
                         {!loading && !error && searchQuery.trim() && movies?.length > 0 && (
                             <Text style={{fontSize: 20, color: 'white', fontWeight: 'bold'}}>
                                 Search Results for {''}
-                                <Text style={{color: 'AB8BFF'}}>{searchQuery}</Text>
+                                <Text style={{color: '#AB8BFF'}}>{searchQuery}</Text>
                             </Text>
                         )}
                     </>

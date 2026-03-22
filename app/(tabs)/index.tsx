@@ -36,7 +36,9 @@ import { ActivityIndicator, FlatList, Image, ScrollView, Text, View } from "reac
           ) : (
             <View style={{ flex: 1, marginTop: 20 }}>
             <SearchBar 
-              onPress={() => router.push('/search')}
+              onPress={() => { 
+                router.push('/search');
+              }}
               placeholder="Search for a movie"
             />
 
